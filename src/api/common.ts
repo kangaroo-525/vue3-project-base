@@ -4,7 +4,7 @@ interface Params {
   [key: string]: string
 }
 /**
- * axios请求
+ * 请求文件
  * @param url 请求地址
  * @param method {METHOD} http method
  * @param params 请求参数
@@ -42,7 +42,7 @@ export async function downloadFile(
 }
 
 /**
- * axios请求
+ * 请求地址
  * @param url 请求地址
  * @param method {METHOD} http method
  * @param params 请求参数
@@ -80,4 +80,24 @@ export async function getFileUrl(resUrl: string, params: Params) {
         })
       })
   })
+}
+
+/**
+ * 根据某个数据类型获取下拉列表
+ * @param url 请求地址
+ * @param method {METHOD} http method
+ * @param dataType 请求参数
+ */
+export async function sysDictListByDataType(dataType: string) {
+  return request('/api/sysDict/sysDictListByDataType', METHOD.GET, { dataType })
+}
+
+/**
+ * 根据某个数据类型以及状态获取下拉列表
+ * @param url 请求地址
+ * @param method {METHOD} http method
+ * @param dataType 请求参数
+ */
+export async function sysDictListByDataTypeStatus(params: Params) {
+  return request('/api/sysDict/sysDictListByDataTypeStatus', METHOD.GET, params)
 }

@@ -9,6 +9,7 @@ import 'dayjs/locale/en'
 import 'dayjs/locale/zh-hk'
 import { useI18nStore } from '@/stores'
 import i18n from '@/language'
+import '@/assets/main.css'
 
 const App = defineComponent({
   name: 'App',

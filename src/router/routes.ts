@@ -6,6 +6,23 @@ const basicRoutes: RoutesType = [
     component: () => import('@/views/home')
   },
   {
+    path: '/base',
+    name: 'base',
+    component: () => import('@/views/base'),
+    children: [
+      {
+        path: 'customer',
+        name: 'base-customer',
+        component: () => import('@/views/base/customer')
+      },
+      {
+        path: 'batch',
+        name: 'base-batch',
+        component: () => import('@/views/base/batch')
+      }
+    ]
+  },
+  {
     path: '/test',
     name: 'test',
     component: () => import('@/views/test')

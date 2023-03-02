@@ -23,3 +23,12 @@ export function parseUrlParams(url: string) {
   }
   return params
 }
+
+export function postMessage(isCoverParent: boolean) {
+  window.parent.postMessage(
+    {
+      isCoverParent: isCoverParent
+    },
+    '*'
+  )
+}
